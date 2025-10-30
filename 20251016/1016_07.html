@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .robot {
+            position: relative;
+            width: 200px;
+            height: 300px;
+        }
+
+        .head {
+            position: absolute;
+            top: 0;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: #silver; /* 銀灰色頭部 */
+            border-radius: 50px 50px 20px 20px; /* 圓角頭部 */
+            border: 5px solid #333;
+        }
+
+        .eye {
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            border: 2px solid #000;
+        }
+        .eye.left {
+            left: 20px;
+        }
+        .eye.right {
+            right: 20px;
+        }
+
+
+        .body {
+            position: absolute;
+            top: 100px;
+            left: 40px;
+            width: 120px;
+            height: 150px;
+            background-color: #blue; /* 藍色身體 */
+            border-radius: 20px;
+            border: 5px solid #333;
+        }
+
+
+        .arm {
+            position: absolute;
+            top: 120px;
+            width: 30px;
+            height: 100px;
+            background-color: #silver;
+            border-radius: 15px;
+            border: 3px solid #333;
+        }
+        .arm.left {
+            left: 10px;
+            transform: rotate(10deg);
+        }
+        .arm.right {
+            right: 10px;
+            transform: rotate(-10deg);
+        }
+
+        .leg {
+            position: absolute;
+            bottom: 0;
+            width: 40px;
+            height: 80px;
+            background-color: #silver;
+            border-radius: 20px;
+            border: 3px solid #333;
+        }
+        .leg.left {
+            left: 50px;
+        }
+        .leg.right {
+            left: 110px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="robot">
+        <div class="head">
+            <div class="antenna"></div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+        </div>
+        <div class="body"></div>
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+        <div class="leg left"></div>
+        <div class="leg right"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GGK - Milky Way | 復古音樂頁面</title>
+    
+    <style>
+        /* General Body and Background Styling */
+        body {
+            /* 使用更現代的字體並置中內容 */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            color: #333; /* 深色文字以提高對比度 */
+            /* 假設背景圖片路徑是正確的 */
+            background-image: url('./images/10.7back\ .jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center fixed; /* fixed 讓圖片在滾動時保持不動 */
+            padding-top: 20px;
+        }
+
+        /* 主標題樣式 */
+        h1 {
+            color: #4a235a; /* 豐富的紫色 */
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+
+        }
+
+        /* 歌詞/資訊的次標題樣式 */
+        h3 {
+            color:#8A2BE2; /* 藍紫羅蘭 */
+            font-size: x-large;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* 內容容器 (歌曲資訊與歌詞) - 實現毛玻璃效果 */
+        .lyrics-box {
+            /* === 毛玻璃效果 (Glassmorphism) === */
+            background-color: rgba(255, 255, 255, 0.2); /* 非常淺的半透明白色 */
+            backdrop-filter: blur(8px); /* 關鍵！背景模糊效果，形成毛玻璃 */
+            -webkit-backdrop-filter: blur(8px); /* 支援 Safari */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* 細微邊框增加層次感 */
+            
+            /* === 寬度調整 === */
+            width: 800px; /* 拉寬方框以減少換行 */
+            max-width: 90%; /* 避免在小螢幕上超出邊界 */
+            
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px auto; /* 置中方框 */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 輕微陰影 */
+            line-height: 1.7;
+            text-align: center; 
+            white-space: pre-wrap; /* 保留歌詞中的換行 */
+            color: #4a235a; /* 將字體顏色調深一點，在透明背景上更清楚 */
+        }
+        
+        /* 置中音訊播放器 */
+        .audio-player-container {
+            margin: 20px auto;
+            width: 800px; /* 與毛玻璃框相同的寬度 */
+            max-width: 90%;
+        }
+        
+        /* 播放器按鈕美化 - 微透明化並拉長 */
+        audio {
+            width: 100%; /* 讓播放器與父容器 (800px) 一樣長 */
+            opacity: 0.85; /* 微透明效果 */
+            background-color: rgba(255, 255, 255, 0.5); /* 讓控制項底色微透明 */
+            border-radius: 50px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+
+        /* 古早電視外框樣式 - 保留並確保縮小 */
+        .vintage-tv {
+            /* 置中電視容器 */
+            margin: 40px auto;
+            display: inline-block;
+            
+            /* 模擬電視外觀 */
+            background-color: #3a3a3a; /* 深色外殼 */
+            border: 20px solid #555; /* 厚邊框作為電視外框 */
+            border-radius: 25px;
+            box-shadow: 
+                inset 0 0 10px rgba(0, 0, 0, 0.8), /* 內部陰影 */
+                0 15px 30px rgba(0, 0, 0, 0.6); /* 外部陰影 */
+            
+            /* 縮小整個電視單元 (小視窗效果) */
+            transform: scale(0.7); 
+            transform-origin: center;
+            position: relative;
+        }
+
+        .vintage-tv iframe {
+            display: block;
+            border: 5px solid #000; /* 螢幕邊框 */
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8); /* 內部螢幕光澤/陰影 */
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1>GGK (Vo. Madison McFerrin) - Milky Way</h1>
+    
+    <div class="audio-player-container">
+        <audio controls>
+            <source src="milky_way_audio.mp3" type="audio/mpeg">
+            您的瀏覽器不支援音訊元素。
+        </audio>
+    </div>
+
+    <div class="lyrics-box">
+        <h3>歌曲資訊</h3>
+        這首歌曲出自動畫**《Carole & Tuesday》**（キャロル＆チューズデイ）第9集「Dancing Queen」，<br>
+        由角色**GGK**（聲優：國立幸）演唱，實際演唱者為**Madison McFerrin**。<br>
+        歌曲於2019年7月31日上架，收錄在**《Carole & Tuesday Vocal Collection, Vol. 1》**專輯中。<br>
+        ---
+        • 作詞、作曲：Taylor McFerrin、Madison McFerrin<br>
+        • 編曲：Taylor McFerrin
+        
+        <br><br>
+        
+        <h3>歌詞 (Lyrics)</h3>
+        [Verse 1: Madison McFerrin]
+        
+        Hey, how would you like to watch the stars?
+        See how they shine so brightly
+        Just for us-us-us, us-us-us-us
+        It's so nice beside you
+        I could do this every day, just holding
+        You by my side-side-side, side-side-side 'cause
+        
+        [Chorus: Madison McFerrin]
+        
+        I, I lo-lo-lo-lo-lo-lo-love you
+        You, you lo-lo-lo-lo-lo-lo-love me
+        How about we run away
+        To the milky way?
+        
+        [Verse 2: Madison McFerrin]
+        
+        Hey, how would you like to float right by
+        Aquarius dancing in the deep blue
+        Light-light-light, light-light-light-light
+        There's no Earth, forget Mars
+        Let's chase stars, see how they shine so brightly
+        Just for us-us-us, us-us-us 'cause
+        
+        [Chorus: Madison McFerrin]
+        
+        I, I lo-lo-lo-lo-lo-lo-love you
+        You, you lo-lo-lo-lo-lo-lo-love me
+        How about we run away
+        To the, to the, to the milky way? 
+        The milky way 
+        The milky way
+        
+    </div>
+    
+    <div class="vintage-tv">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Eq9jxeP3F9g?si=0ERi7Ea4rV6fiCXT"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inline&block</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        h2{
+            /* inline-size: 1px; */
+            /* 可以調整大小 */
+            display: block;
+            width: 100%;
+            height: 200px;
+            background-color: aquamarine;
+        }
+        h3{
+            /* block-size: 50px; */
+            /* 將原本質排列的東西縮行並換行 */
+            display: inline;
+            /* 寬度不能改變 */
+            /* width: 0px; */
+            /* 高度不能改變 */
+            /* height: 0px; */
+            background-color: aquamarine;
+            margin: 0;
+            padding: 2px 6px;
+        }
+        h6{
+            display: inline-block;
+            background-color: aquamarine;
+            width: 100%;
+            min-height: 100px;
+            /* height:100%; */
+        }
+        div{
+            /* 本身就可以調整大小 */
+            background-color: aquamarine;
+            height: 100%;
+            /* width: 100%; */
+            min-height: 150px;
+            box-sizing: border-box;
+        }
+        img{
+            /* display: inline;
+            display: block; */
+            background-color: aquamarine;
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+        .in>a{
+            display: block;
+            font-size: 90px;
+            background-color: aqua;
+            /* display: inline; */
+            display: block;
+            /* 可以將文字變成直排 */
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        li{
+            font-size: 50px;
+            /* display: inline; */
+            display: inline-block;
+            /* 將列表示的文字變成橫向 */
+            margin: 15px;
+        }
+        /* .top{
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background-color: rgba(4, 138, 255, 0.192);
+            font-size: 30px;
+            border-radius: 20px;
+        } */
+         .top {
+             position: fixed;
+             bottom: 110px;                   /* 與 back_css 拉開 80px */
+             right: 20px;
+             background-color: rgba(4, 138, 255, 0.8);
+             width: 60px;
+             height: 60px;
+             border-radius: 50%;
+             text-align: center;
+             line-height: 60px;
+             font-size: 16px;
+             color: white;
+             z-index: 1000;
+             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+             transition: all 0.3s ease;
+            }           
+        /* .back_css{
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            background-color: rgba(54, 86, 87, 0.336);
+            font-size: 30px;
+            text-align: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+        } */
+        .back_css {
+            position: fixed;
+            bottom: 30px;                    /* 拉低一點 */
+            right: 20px;
+            background-color: rgba(54, 86, 87, 0.7);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;               /* 文字垂直置中 */
+            font-size: 14px;
+            color: white;
+            z-index: 1000;                   /* 確保在最上層 */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }                   
+        .top a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .back_css a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            
+
+        }
+                 
+    </style>
+</head>
+<body>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore velit commodi explicabo suscipit, cum necessitatibus nisi quos exercitationem ea temporibus, vel harum nemo quod rerum! Culpa error et ducimus officia, totam quod facere, id harum eius porro rerum quisquam accusantium reprehenderit ad impedit quas ipsum dignissimos dolores! Quod recusandae numquam culpa ducimus necessitatibus perspiciatis nesciunt, iusto consectetur sapiente inventore hic.</h2>
+    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi et totam inventore possimus quasi! Sunt laudantium quas similique laboriosam cumque minima esse distinctio deserunt ut itaque fugiat, expedita, nesciunt ullam! Corporis ipsum officiis eaque deleniti possimus delectus. Corporis accusantium vitae, magnam et id accusamus. Vitae minus doloremque ea illum architecto voluptatibus saepe cum, nemo nesciunt velit quas eaque culpa nam iusto iste quasi pariatur. Velit, id? Veritatis excepturi aliquid ad iusto, nesciunt illo, cupiditate aut et tempore nobis sint libero labore sapiente laborum minima reiciendis cum, at inventore debitis cumque natus quo neque dolorum. Omnis assumenda exercitationem dicta earum accusamus.</h3>
+    <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, natus voluptatum. Amet quod odio atque maxime, nobis eius vero id quis molestias provident hic quasi repellat qui sit quo odit, at expedita quam. Ea non quibusdam modi magnam veritatis expedita, optio similique at recusandae, delectus, esse provident. Laboriosam vitae tempore, illo autem eveniet ipsum non dolor dolores ab minima, commodi mollitia soluta. Magnam voluptates, voluptate consectetur non quasi recusandae necessitatibus natus dignissimos vel ratione nobis consequatur quos quisquam, rerum quae excepturi iusto exercitationem aperiam similique! Excepturi provident, ad quasi impedit atque debitis perferendis? Voluptas nobis nam nostrum recusandae quidem tempore cum reprehenderit similique at, placeat soluta error aut, quo itaque deleniti unde reiciendis tenetur cumque consequuntur, repellat quam harum esse accusamus! Ratione deserunt dolore mollitia? Iure pariatur corporis ex cum, sapiente adipisci dolor eius animi optio cupiditate? Sit aliquid laborum inventore non similique assumenda est placeat ipsa ipsum voluptatibus pariatur quia voluptatem corporis quae nostrum molestiae, id hic quas aut vel itaque. Odio voluptatum quidem quam aut obcaecati ipsum, aliquam, assumenda illo doloribus magnam, sapiente architecto. Dolorem sunt autem voluptatum voluptatibus perspiciatis maxime perferendis voluptates laudantium, tempore, et, nemo laborum commodi ducimus repudiandae nam assumenda neque eos repellendus atque ipsa consectetur quae quis ab. Aut fugit nam fuga id, veritatis voluptas inventore ipsa labore velit tempore repellendus iste ducimus enim laudantium placeat. Consectetur accusantium incidunt ipsam ducimus beatae porro, odio excepturi, vel esse veniam blanditiis. Ipsa eligendi laudantium dicta quo illo rem placeat quae commodi molestiae consequatur tempora dolor eveniet quaerat veniam, nulla laboriosam voluptatem. Quod ratione culpa, quasi animi, minima dolores neque quo cumque placeat aspernatur vitae rem molestiae alias distinctio quidem harum, ad est et repellat quas aut omnis odio aperiam quos. Eveniet aperiam adipisci suscipit minima blanditiis reprehenderit asperiores, repellat voluptates pariatur at optio ipsam maiores dolores autem cupiditate itaque ullam unde aliquam repellendus? Est sed quam porro vel in fuga eos eaque, ipsa deleniti quos perferendis eius aliquid quae eveniet quo rem ut autem debitis sit perspiciatis id natus! Perspiciatis, fuga porro ullam exercitationem incidunt sequi quaerat nulla ea. Fuga nostrum amet cumque debitis, obcaecati quas odio nam fugit perferendis, autem totam, voluptatum veniam possimus eum natus quia! Quia velit perspiciatis cum harum fugiat reprehenderit assumenda nesciunt deleniti laudantium iure eveniet, sunt officiis veritatis voluptates odio quisquam vel dolor, reiciendis, quaerat est quibusdam impedit vitae. Enim iusto impedit at aut error hic voluptas libero? Ut provident labore ipsa impedit eius sunt recusandae excepturi distinctio debitis optio ipsam culpa dolore saepe temporibus facere quasi, aut est aspernatur, blanditiis facilis architecto reiciendis voluptates! Debitis repellendus doloribus, natus odio rerum quas a sunt non rem nihil iusto ad cupiditate impedit deleniti illo unde distinctio exercitationem! Eaque, architecto! Laboriosam nemo molestias eveniet modi cum earum illo maiores laborum dolor. Numquam iste necessitatibus corporis nemo distinctio rerum tempore nesciunt, sed, ex magni placeat ipsum dolor commodi repellat ea sapiente minima provident voluptatibus laboriosam officiis saepe soluta suscipit quaerat. Totam culpa, rem aliquid a at molestiae! Excepturi illo veritatis porro natus. Ab?</h6>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure incidunt dolore maxime et possimus vitae, corporis minima pariatur amet labore perspiciatis! Eum, possimus nostrum delectus eos unde distinctio, hic nisi neque tempora, corporis quidem? Asperiores ducimus perspiciatis ab natus nobis? Neque beatae optio libero odit enim possimus suscipit quam, velit doloremque quae, asperiores, labore aliquid? Similique cum facere sapiente assumenda optio animi saepe natus praesentium sequi, explicabo consequuntur repudiandae numquam omnis quos laboriosam ut exercitationem facilis doloribus esse quasi accusantium dolorum error consequatur! A fuga explicabo, laborum velit laudantium beatae mollitia officiis aliquid minima error inventore similique perferendis! Possimus eaque sapiente voluptatibus! Nostrum necessitatibus tenetur qui quasi quibusdam obcaecati suscipit veritatis quos nulla eaque dolorum dolor voluptates aut delectus non deleniti reprehenderit facilis fugiat voluptatem aperiam, at aspernatur odit maxime ullam. Facere rerum dicta nostrum nam sint, maxime libero praesentium ex quidem aspernatur minus tempora temporibus accusamus neque, doloribus nihil magni optio perferendis iure fugit enim? Porro officiis deleniti praesentium illo earum molestiae tenetur enim temporibus iste ipsam vitae unde explicabo adipisci mollitia dicta provident ipsum ea quasi, architecto quae animi tempora veniam culpa officia! Consequatur perferendis excepturi tempora numquam eveniet aliquam qui sequi blanditiis omnis? Exercitationem soluta quo minus culpa porro iure vel cum libero dolorum quaerat praesentium aspernatur corrupti quod voluptatibus modi nulla ex harum at, tenetur odit doloribus tempora numquam quia? Dolores quaerat voluptate fugiat, dignissimos, perferendis nobis sed nulla facere expedita voluptatem ullam delectus! Possimus repellendus temporibus cupiditate? Esse, dolor odit? Praesentium qui illo alias obcaecati necessitatibus dolor aperiam quod! Veritatis nostrum, ad eum nisi eaque ipsa perferendis consectetur minus? Nostrum id harum laborum animi quia magni consectetur placeat quos facilis modi necessitatibus dolorum laudantium hic unde fuga sapiente repudiandae error provident, odio perferendis aut vel aspernatur. Nemo autem, quis eaque obcaecati aliquam cupiditate, alias doloribus vero magni deleniti, accusantium delectus! Fugit incidunt eveniet ut sunt dolores assumenda. Earum, temporibus fugit! Reiciendis accusantium provident ea tenetur amet blanditiis voluptatem ut, dolores nisi animi neque soluta, earum modi facilis, veniam ullam quidem repellendus inventore a! Quae aliquam quod animi at, voluptas enim maxime pariatur dolores sapiente amet nisi dignissimos, eligendi harum, non voluptatem! Minus, vel repudiandae! Doloremque debitis obcaecati illo illum inventore dignissimos cupiditate! Mollitia, aut perferendis! Soluta, iusto, porro autem praesentium dolores nam quae quam perferendis neque ipsam sapiente non commodi id deleniti, repellat necessitatibus numquam dolore animi illo. Corrupti dolorum id iusto ea, aut voluptas alias ipsa? Ab, laboriosam! Assumenda earum, aliquid exercitationem illum ipsa quibusdam architecto esse aut consequatur, optio repellat laudantium nobis reiciendis veniam maxime sapiente dicta amet. Cum placeat perferendis vel accusantium recusandae, nulla dolor sequi sint. Excepturi nemo ut accusamus voluptates temporibus a, corporis ex cum vel quos odio eligendi sapiente earum in magnam. Laborum quod repellendus nostrum ullam, libero quibusdam rerum ipsam natus doloribus illo amet eligendi delectus dolorem reiciendis necessitatibus magni modi sit dolorum in nam vel animi iusto a deserunt? Cupiditate ullam enim alias voluptatum, aliquam dicta ducimus nam aspernatur laborum expedita sunt et fugiat magnam corrupti, minima ipsa commodi illo tempore, quos harum perspiciatis distinctio. Maxime, quam illum. Aspernatur, doloremque aliquam! Obcaecati nobis quam in asperiores blanditiis, facilis veritatis sit tempore accusantium hic esse velit delectus ipsam reprehenderit dicta laboriosam perspiciatis nam ipsa culpa quidem voluptatibus porro. Ab possimus consequatur, libero repellendus natus neque asperiores, consequuntur quos accusamus accusantium facilis in mollitia perferendis omnis sit nulla ratione, voluptate expedita? Cupiditate, ullam ipsam? Quos animi maxime tempora asperiores quas necessitatibus culpa, quia, dolorem ex dolores similique nemo id tenetur aperiam. Ipsa impedit a ex consequatur natus neque, eaque tenetur provident est. Perspiciatis ea ut omnis iure facilis laboriosam.</div>
+    <img src="./images/istockphoto-1459373176-612x612.jpg" alt="">
+    <div class="in">
+        <a href="https://www2.kek.jp/ilc/ja/clarification/" >進入異世界</a>
+    </div>
+    <li>轉生</li>
+    <li>砍掉</li>
+    <li>升等</li>
+    <div class="back_css">
+        <a href="./03_web_test.html">css</a>
+    </div>
+    <div class="top">
+        <a href="#">top</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baymax</title>
+    <style>
+        body{
+            background-color: #f3f3f3;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .robot{
+            width: 200px;
+            position:relative;
+        }
+
+        /* 頭部 */
+        .head{
+            width: 120px;
+            height: 70px;
+            background-color: white;
+            border-radius: 50% 50% 40% 40%;
+            margin: 0 auto;
+            position:relative;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+
+        /* 眼睛 */
+        .eye{
+            width: 14px;
+            height: 14px;
+            background-color: black;
+            border-radius: 50%;
+            position:absolute;
+            top:28px;
+        }
+        .eye-left{ left: 30px; }
+        .eye-right{ right: 30px; }
+
+        /* 眼睛連線 */
+        .connector{
+            width: 50px;
+            height: 2px;
+            background-color: black;
+            position: absolute;
+            top: 34px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* 身體 */
+        .body{
+            width: 160px;
+            height: 190px;
+            background-color: white;
+            border-radius: 80px / 100px;
+            margin-top: -10px;
+            position:relative;
+            box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        }
+
+        /* 手臂 */
+        .arm{
+            width: 50px;
+            height: 110px;
+            background-color: white;
+            border-radius: 40px;
+            position:absolute;
+            top:20px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+        .arm-left{
+            left: -35px;
+            transform: rotate(10deg);
+        }
+        .arm-right{
+            right: -35px;
+            transform: rotate(-10deg);
+        }
+
+        /* 腳 */
+        .leg{
+            width: 45px;
+            height: 80px;
+            background-color: white;
+            border-radius: 50px;
+            position:absolute;
+            bottom: -60px;
+            box-shadow: 0 0 4px rgba(0,0,0,0.15);
+        }
+        .leg-left{
+            left: 40px;
+        }
+        .leg-right{
+            right: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="robot">
+        <div class="head">
+            <div class="eye eye-left"></div>
+            <div class="eye eye-right"></div>
+            <div class="connector"></div>
+        </div>
+        <div class="body">
+            <div class="arm arm-left"></div>
+            <div class="arm arm-right"></div>
+            <div class="leg leg-left"></div>
+            <div class="leg leg-right"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            font-family: arial, sans-serif;
+            margin-top: 100px;
+            background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
+            background-image: url('./images/background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative; /* 作為整體參考 */
+        }
+
+        /* 表格容器：用來定位毛玻璃在後方 */
+        .table-container {
+            position: relative; /* 建立定位上下文，讓內部 absolute 相對它 */
+            width: 80%; /* 匹配 table 寬度 */
+            margin: auto; /* 置中 */
+            padding: 20px; /* 可選：容器內邊距，讓毛玻璃有空間延伸 */
+            overflow: hidden; /* 確保毛玻璃不溢出 */
+        }
+
+        /* 毛玻璃背景層：在 table 下方 */
+        .frosted-bg {
+            position: absolute; /* 浮動在容器內 */
+            top: 0;
+            left: 0;
+            width: 100%; /* 填滿容器寬 */
+            height: 100%; /* 填滿容器高（會隨 table 自動調整） */
+            background: rgba(255, 255, 255, 0.2); /* 半透明白玻璃底 */
+            backdrop-filter: blur(10px); /* 毛玻璃模糊效果 */
+            -webkit-backdrop-filter: blur(10px); /* Safari 兼容 */
+            border-radius: 15px; /* 圓角，增強玻璃感 */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* 輕微邊框 */
+            z-index: -1; /* 關鍵：在後方，table 会蓋在上層 */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* 可選陰影 */
+        }
+
+        table {
+            width: 100%; /* 填滿容器 */
+            border-collapse: separate;
+            border-spacing: 10px;
+            background: transparent;
+            position: relative; /* 確保 table 在前景 */
+            z-index: 1; /* 在毛玻璃上方 */
+        }
+
+        tr, td {
+            vertical-align: top;
+            padding: 0;
+        }
+
+        td {
+            height: 30vh;
+            width: 50%;
+            background: transparent; /* 確保 td 不擋模糊，如果想 td 也透明可加 */
+            border-radius: 10px; /* 可選：td 圓角 */
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        a {
+            display: block;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 表格容器：毛玻璃在內部下方 -->
+    <div class="table-container">
+        <!-- 毛玻璃層：在 table 下方 -->
+        <div class="frosted-bg"></div>
+
+        <!-- 你的表格：疊在毛玻璃上方 -->
+        <table>
+            <tr>
+                <td><a href="./f1.html"><img src="./images/shop1.webp" alt="Shop 1"></a></td>
+                <td><a href="./f2.html"><img src="./images/shop2.png" alt="Shop 2"></a></td>
+            </tr>
+            <tr>
+                <td><a href="./f3.html"><img src="./images/shop3.webp" alt="Shop 3"></a></td>
+                <td><a href="./f4.html"><img src="./images/shop4.webp" alt="Shop 4"></a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

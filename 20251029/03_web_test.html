@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>製作多頁網頁-練習</title>
+    <style>
+        body, h1, p, ul, ol, section, main, aside, footer {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            min-height: 100%;
+        }
+        .logo{
+            background-color: #f1bbba;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 20px;
+            
+            
+        }
+        /* .main-nav{
+            float: left;
+            margin-top: 5px;
+        } */
+        .site-header, .main-nav {
+            background-color: #ffffff;
+        }
+        ul{
+            font-size: 30px;
+            text-align: center;
+        }
+        li{
+            display:inline;
+            margin: 0 15px;
+        }
+        .site-main{
+            background-color: #f8ecc9;
+            text-align: center;
+            display: block;
+            height: 100vh;
+        }
+        h1{
+            font-size: 60px;
+            margin-bottom: 15px;
+            padding-top: 25%;
+            box-sizing: border-box;
+        }
+        p{
+            font-size: 30px;
+            margin-bottom: 20px;
+            padding-top: 5%;
+            box-sizing: border-box;
+        }
+        .content-section{
+            background-color: #a79c8e;
+            text-align: center;
+            height: 100vh;
+        }
+        .site-main a{
+            display: block;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+        .content-section a{
+            display: block;
+            margin-top: 10px;
+            font-size: 20px;
+            /* background-color: #56445d;
+            width: 200px;
+            border-radius: 10px;
+            color: #ffffff;
+            padding: 10px 0; */
+        }
+        .site-section{
+            background-color: #fbffb9;
+            text-align: center;
+            height: 100vh;
+        }
+        .site-section2{
+            background-color: #fdd692;
+            text-align: center;
+            height: 100vh;
+        }
+        .site-section3{
+            background-color: #ec7357;
+            text-align: center;
+            height: 100vh;
+        }
+        .site-section4{
+            background-color: #754f44;
+            text-align: center;
+            height: 100vh;
+        }
+        .site-section5{
+            background-color: #c5e99b;
+            text-align: center;
+            height: 100vh;
+        }
+        .site-section6{
+            background-color: #8fbc94;
+            text-align: center;
+            height: 100vh;
+        }
+        .top{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(54, 86, 87, 0.336);
+            font-size: 30px;
+            text-align: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+        }
+        .site-footer{
+            background-color: #56445d;
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            position: absolute;
+            width: 100%;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo">css</div>
+    </header>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="../20251030/float_slicing.html">Iframe</a></li>
+            <li><a href="../20251029/04_float_img.html">float</a></li>
+            <li><a href="../20251029/06_clear.html">clear</a></li>
+            <li><a href="../20251029/05_web_2.html">web2</a></li>
+            <li><a href="../20251029/01_inline_block.html">inline&block</a></li>
+        </ul>
+    </nav> 
+    <main class="site-main">
+        <h1>Learn to Code</h1>
+        <p>With the world's largest web developer site.</p>
+        <input type="search" name="q" placeholder="輸入關鍵字搜尋">
+        <a href="https://www.w3schools.com/where_to_start.asp">Not Sure Where To Begin?</a>
+    </main>
+    <aside class="content-section">
+        <h1>JavaScript</h1>
+        <p>The language for programming web pages</p>
+        <a href="https://www.w3schools.com/js/default.asp">learn JavaScript</a>
+        <a href="https://www.w3schools.com/jsref/default.asp">JavaScript reference</a>
+        <a href="https://campus.w3schools.com/collections/certifications/products/javascript-certificate?_gl=1*97qxba*_ga*NzQxMzM3MzAuMTc1ODY3NDc2Mw..*_ga_9YNMTB56NB*czE3NjE3MDA1MDUkbzQ0JGcxJHQxNzYxNzAzODU4JGo1MCRsMCRoMA..">get cerfied</a>
+    </aside>
+    <section class="site-section">
+        <h1>Python</h1>
+        <p>A popular programming language</p>
+        <a href="https://www.w3schools.com/python/default.asp">learn python</a>
+        <a href="https://www.w3schools.com/python/python_reference.asp">python reference</a>
+        <a href="https://campus.w3schools.com/collections/certifications/products/python-certificate?_gl=1*f1ta2t*_ga*NzQxMzM3MzAuMTc1ODY3NDc2Mw..*_ga_9YNMTB56NB*czE3NjE3MDYxMzQkbzQ1JGcxJHQxNzYxNzA2MTQ0JGo1MCRsMCRoMA..">get gertifiled</a>
+    </section>
+    <section class="site-section2">
+        <h1>Python</h1>
+        <p>A popular programming language</p>
+        <a href="https://www.w3schools.com/python/default.asp">learn python</a>
+        <a href="https://www.w3schools.com/python/python_reference.asp">python reference</a>
+        <a href="https://campus.w3schools.com/collections/certifications/products/python-certificate?_gl=1*f1ta2t*_ga*NzQxMzM3MzAuMTc1ODY3NDc2Mw..*_ga_9YNMTB56NB*czE3NjE3MDYxMzQkbzQ1JGcxJHQxNzYxNzA2MTQ0JGo1MCRsMCRoMA..">get gertifiled</a>
+    </section>
+    <section class="site-section3">
+        <h1>Python</h1>
+        <p>A popular programming language</p>
+        <a href="https://www.w3schools.com/python/default.asp">learn python</a>
+        <a href="https://www.w3schools.com/python/python_reference.asp">python reference</a>
+        <a href="https://campus.w3schools.com/collections/certifications/products/python-certificate?_gl=1*f1ta2t*_ga*NzQxMzM3MzAuMTc1ODY3NDc2Mw..*_ga_9YNMTB56NB*czE3NjE3MDYxMzQkbzQ1JGcxJHQxNzYxNzA2MTQ0JGo1MCRsMCRoMA..">get gertifiled</a>
+    </section>
+    <section class="site-section4">
+        <h1>Python</h1>
+        <p>A popular programming language</p>
+        <a href="https://www.w3schools.com/python/default.asp">learn python</a>
+        <a href="https://www.w3schools.com/python/python_reference.asp">python reference</a>
+        <a href="https://campus.w3schools.com/collections/certifications/products/python-certificate?_gl=1*f1ta2t*_ga*NzQxMzM3MzAuMTc1ODY3NDc2Mw..*_ga_9YNMTB56NB*czE3NjE3MDYxMzQkbzQ1JGcxJHQxNzYxNzA2MTQ0JGo1MCRsMCRoMA..">get gertifiled</a>
+    </section>
+    <section class="site-section5">
+        <h1>Python</h1>
+        <p>A popular programming language</p>
+        <a href="https://www.w3schools.com/python/default.asp">learn python</a>
+        <a href="https://www.w3schools.com/python/python_reference.asp">python reference</a>
+        <a href="https://campus.w3schools.com/collections/certifications/products/python-certificate?_gl=1*f1ta2t*_ga*NzQxMzM3MzAuMTc1ODY3NDc2Mw..*_ga_9YNMTB56NB*czE3NjE3MDYxMzQkbzQ1JGcxJHQxNzYxNzA2MTQ0JGo1MCRsMCRoMA..">get gertifiled</a>
+    </section>
+    <section class="site-section6">
+        <h1>Python</h1>
+        <p>A popular programming language</p>
+        <a href="https://www.w3schools.com/python/default.asp">learn python</a>
+        <a href="https://www.w3schools.com/python/python_reference.asp">python reference</a>
+        <a href="https://campus.w3schools.com/collections/certifications/products/python-certificate?_gl=1*f1ta2t*_ga*NzQxMzM3MzAuMTc1ODY3NDc2Mw..*_ga_9YNMTB56NB*czE3NjE3MDYxMzQkbzQ1JGcxJHQxNzYxNzA2MTQ0JGo1MCRsMCRoMA..">get gertifiled</a>
+    </section>
+    <section class="top">
+        <a href="#">⬆</a>
+    </section>
+    <footer class="site-footer">2025學生抹你( ఠൠఠ )ﾉ</footer>
+    
+</body>
+</html>
