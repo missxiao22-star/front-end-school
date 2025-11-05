@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>製作多頁網頁-練習</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100%;
+        }
+        .logo{
+            background-color: #56acfc;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 20px;
+            
+            
+        }
+        /* .main-nav{
+            float: left;
+            margin-top: 5px;
+        } */
+        .site-header, .main-nav {
+            background-color: #ffffff;
+        }
+        ul{
+            font-size: 30px;
+            text-align: center;
+        }
+        li{
+            display:inline;
+            margin: 0 15px;
+        }
+        .site-main{
+            background-color: #56acfc;
+            text-align: center;
+            display: block;
+            height: 129vh;
+            position: relative;
+            background-image: url(./images/고양이.png);
+            background-size: 50%;
+        }
+        h1{
+            font-size: 60px;
+            margin-bottom: 15px;
+            padding-top: 25%;
+            box-sizing: border-box;
+        }
+        p{
+            font-size: 30px;
+            margin-bottom: 20px;
+            padding-top: 5%;
+            box-sizing: border-box;
+        }
+        .content-section{
+            background-color: #000000;
+            text-align: center;
+            height: 220vh;
+            font-size: 30px;
+        }
+        .photo{
+            /* width: 200px; */
+            /* height: 100px; */
+        }
+        .contentbox{
+            width: 700px;
+            height: 300px;
+            /* background-color: #56445d; */
+            position: relative;
+
+        }
+        .circle-1, .circle-2, .circle-3, .circle-4{
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            position: absolute;
+            overflow: hidden;
+        }
+        .circle-1 { left: 200px; top: 150vh; }
+        .circle-2 { left: 600px; top: 150vh; }
+        .circle-3 { left: 1000px; top: 150vh; }
+        .circle-4 { left: 1450px; top: 150vh; }
+        .circle-1 img,.circle-2 img,.circle-3 img,.circle-4 img {
+            width: 100%;  
+            height: 100%;
+            object-fit: cover; 
+        }         
+        .box-in{
+            width: 70px;
+            height: 30px;
+            background-color: rgba(28, 145, 255,0.9);
+            color:aliceblue;
+            position: absolute;
+            right: 40px;
+            bottom: 222px;
+            z-index: 2;
+            font-size: 21px;
+            border-radius: 10px;
+        }
+        .contentbox1{
+            position: relative;
+        }
+        .contentbox.box-02{
+            width: 100%;
+            height: 50px;
+            background-color: #fbffb9;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .contentbox.box-01{
+            width: 650px;
+            height: 80vh;
+            background-color: #0c88fc;
+            object-fit: cover;
+            margin-top: 20vh;
+            position: absolute;
+            left: 180px;
+        }
+        .contentbox.box-01 img{
+            width: 100%;  
+            height: 100%;
+            object-fit: cover; 
+        }
+        .contentbox.box-03{
+            width: 650px;
+            height: 80vh;
+            background-color: #0c88fc;
+            object-fit: cover;
+            margin-top: 20vh;
+            position: absolute;
+            left: 1050px;
+        }
+        .contentbox.box-03 img{
+            width: 100%;  
+            height: 100%;
+            object-fit: cover; 
+        }
+        .site-main a{
+            display: block;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+        .content-section a{
+            display: block;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+        .site-section{
+            background-color: #fbffb9;
+            text-align: center;
+            height: 100vh;
+        }
+        .site-section2{
+            background-color: #fdd692;
+            text-align: center;
+            height: 100vh;
+        }
+        .top{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(54, 86, 87, 0.336);
+            font-size: 30px;
+            text-align: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+        }
+        .site-footer{
+            background-color: #56445d;
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            position: absolute;
+            width: 100%;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo">ZOO</div>
+    </header>
+    <nav class="main-nav">
+      
+    </nav> 
+    <main class="site-main">
+        <!-- <h1>photo style</h1> -->
+        <div class="mainbox">
+        <img src="./images/고양이.png" alt="">
+       </div>
+    </main>
+    <aside class="content-section">
+        <h1>photo style</h1>
+        <div class="circle-1">
+            <img src="./images/unnamed (1).jpg" alt="">
+        </div>
+        <div class="circle-2">
+            <img src="./images/unnamed (2).jpg" alt="">
+            <div class="box-in">
+                discont 15%
+            </div>
+        </div>
+        <div class="circle-3">
+            <img src="./images/unnamed (3).jpg" alt="">
+            <div class="box-in">
+                discont 15%
+            </div>
+        </div>
+        <div class="circle-4">
+            <img src="./images/unnamed.jpg" alt="">
+        </div>
+        <div class="contentbox box-02">
+        領養代替購買，領養代替購買，領養代替購買
+       </div>
+        <div class="contentbox box-01">
+        <img src="./images/烏龜.png" class="photo" alt="">
+       </div>
+        <div class="contentbox box-03">
+        <img src="./images/機器人.png" alt="">
+       </div>
+    </aside>
+    <section class="site-section">
+        <h1>server</h1>
+        <div class="sitebox">
+        <img src="" alt="">
+       </div>
+        <div class="sitebox">
+        <img src="" alt="">
+       </div>
+        <div class="sitebox">
+        <img src="" alt="">
+       </div>
+    </section>
+    <section class="site-section2">
+        <h1>contect me</h1>
+        
+    </section>
+    <section class="top">
+        <a href="#">⬆</a>
+    </section>
+    <footer class="site-footer">2025學生抹你( ఠൠఠ )ﾉ</footer>
+    
+</body>
+</html>
