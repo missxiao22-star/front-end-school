@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felxbox-切版初級</title>
+    <style>
+        /*/-----------row(預設)container-----------------/*/
+        .container{
+            width: 100%;
+            height: 60vh;
+            background-color: rgb(13, 105, 21);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(79, 236, 58);
+            border-radius: 15%;
+        }
+        /*/-----------column(直式)container----------------/*/
+        .container1{
+            width: 50%;
+            height: 60vh;
+            background-color: rgb(241, 198, 142);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .box0{
+            width: 200px;
+            height: 100px;
+            background-color: rgb(224, 163, 83);
+        }
+        .pon{
+            font-size: 40px;
+            color: rgb(99, 88, 75);
+        }
+    </style>
+
+
+</head>
+<body>
+    <p>row(預設)container</p>
+        <p class="pin">豌豆豆豆豆豆</p> 
+    <div class="container">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+    </div>
+
+    <hr>
+
+    <p>column(直式)container</p>
+    <div class="container1">
+        <p class="pon">頂叩叩法式麵包</p>
+        <div class="box0 box11"></div>
+        <div class="box0 box22"></div>
+        <div class="box0 box33"></div>
+    </div>
+</body>
+</html>
