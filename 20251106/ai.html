@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web-use flexbox</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-color: aliceblue;
+            display: flex;
+            flex-direction: column; /* 讓 header, main, footer 垂直排列 */
+        }
+
+        .header {
+            width: 100%;
+            height: 9vh;
+            background-color: aquamarine;
+            display: flex;
+            align-items: center;          /* 垂直置中 */
+            justify-content: space-between; /* 左右分開 */
+            padding: 0 10px;              /* 左右內距 */
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            border-radius: 20px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        .nav-name {
+            margin: 0 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="logo"></div>
+        <div class="nav">
+            <div class="nav-name">關於我們</div>
+            <div class="nav-name">商品</div>
+            <div class="nav-name">活動</div>
+            <div class="nav-name">服務</div>
+            <div class="nav-name">聯絡我們</div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div>banner</div>
+        <div>商品輪播</div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 My Website</p>
+    </div>
+</div>
+
+</body>
+</html>
