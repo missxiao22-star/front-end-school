@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+.header{
+    width: 1024px;
+    height: 65px;
+    /* background-color: bisque; */
+    margin: auto;
+    border: 1px solid rgb(43, 255, 0);
+    text-align: center;
+
+}
+.container{
+    width: 1024px;
+    height: calc(768px - 65px - 20px);
+    background-color: rgb(245, 136, 3);
+    margin: auto;
+    display: flex;
+    border: 1px solid rgb(43, 255, 0);
+    border-top: 0px;
+}
+.menu{
+    width: 215px;
+    height: 100%;
+    background-color: rgb(211, 240, 185);
+    display: flex;
+    flex-direction: column;
+
+}
+.menu_top{
+    width: 100%;
+    height: calc(100% - 25px);
+    background-color: rgb(40, 17, 61);
+
+}
+.menu_bottom{
+    width: 100%;
+    height: 25px;
+    background-color: rgb(206, 171, 238);
+    border: 1px solid rgb(43, 255, 0);
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+
+}
+.site_main_top{
+    width: 100%;
+    height: 29px;
+    background-color: rgb(34, 94, 32);
+    border: 1px solid rgb(43, 255, 0);
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+marquee{
+    color: blue;
+    font-size: 24px x-large size=5;
+    font-family: '標楷體';
+}
+.site_main{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(92, 32, 94);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(43, 255, 0);
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+}
+.footer{
+    width: 1024px;
+    height: 20px;
+    background-color: rgb(116, 69, 12);
+    margin: auto;
+    border: 1px solid rgb(43, 255, 0);
+    border-top: 0px;
+}
