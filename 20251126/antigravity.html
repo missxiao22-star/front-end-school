@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>腦力覺醒 | 記憶力與大腦開發</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a12;
+            --text-color: #e0e0e0;
+            --primary-color: #00f3ff;
+            --secondary-color: #bc13fe;
+            --accent-color: #4d4dff;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Orbitron', 'Noto Sans TC', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Background Animation */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a12 100%);
+            overflow: hidden;
+        }
+
+        .neuron {
+            position: absolute;
+            background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(20px, -20px) scale(1.2);
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 18, 0.8);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 3s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+            }
+
+            to {
+                text-shadow: 0 0 20px rgba(188, 19, 254, 0.8);
+            }
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin-bottom: 40px;
+            color: #aaa;
+        }
+
+        .cta-btn {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+        }
+
+        .cta-btn:hover {
+            background: var(--primary-color);
+            color: #000;
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.6);
+        }
+
+        /* Sections General */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+        }
+
+        /* Cards Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(188, 19, 254, 0.2);
+            border-color: var(--secondary-color);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Techniques Section */
+        .technique-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+            text-align: center;
+        }
+
+        /* Interactive Brain Map (Simplified CSS Representation) */
+        .brain-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            border-radius: 50%;
+            border: 2px solid var(--glass-border);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 50px rgba(0, 243, 255, 0.1);
+        }
+
+        .brain-core {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, var(--accent-color), transparent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(0.95);
+                opacity: 0.7;
+            }
+        }
+
+        /* Memory Game */
+        .memory-game {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--glass-bg);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .game-card {
+            aspect-ratio: 1;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .game-card.flipped {
+            background: var(--primary-color);
+            color: #000;
+            transform: rotateY(180deg);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px;
+            background: rgba(0, 0, 0, 0.5);
+            margin-top: 100px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            nav {
+                padding: 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            /* Simplified for mobile */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-animation" id="bg-animation">
+        <!-- JS will populate neurons -->
+    </div>
+
+    <nav>
+        <div class="logo">NEURO.DEV</div>
+        <div class="nav-links">
+            <a href="#intro">簡介</a>
+            <a href="#techniques">記憶法</a>
+            <a href="#lifestyle">生活習慣</a>
+            <a href="#game">大腦訓練</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>解鎖大腦潛能</h1>
+        <p>掌握科學記憶法，提升專注力，開啟無限可能。</p>
+        <a href="#intro" class="cta-btn">開始探索</a>
+    </header>
+
+    <section id="intro">
+        <h2 class="section-title">為什麼需要大腦開發？</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>神經可塑性</h3>
+                <p>大腦並非一成不變。透過正確的訓練，神經元之間的連結可以被強化，創造新的突觸，讓學習變得更快、更有效率。</p>
+            </div>
+            <div class="card">
+                <h3>資訊爆炸時代</h3>
+                <p>在現代社會，我們每天接收海量資訊。擁有強大的記憶力與過濾資訊的能力，是脫穎而出的關鍵。</p>
+            </div>
+            <div class="card">
+                <h3>延緩衰老</h3>
+                <p>持續的大腦刺激與學習新事物，已被證實能有效預防認知功能下降，保持大腦年輕活力。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="techniques">
+        <h2 class="section-title">核心記憶技術</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="technique-icon">🏰</span>
+                <h3>記憶宮殿 (Memory Palace)</h3>
+                <p>利用空間記憶將抽象資訊具象化。將你想記住的物品放置在你熟悉的空間路徑上，回想時只需在腦中「走一遍」。</p>
+            </div>
+            <div class="card">
+                <span class="technique-icon">🔁</span>
+                <h3>間隔重複 (Spaced Repetition)</h3>
+                <p>對抗遺忘曲線的最佳武器。在快要忘記的時刻進行複習，能以最少的時間達到最長久的記憶效果。</p>
+            </div>
+            <div class="card">
+                <span class="technique-icon">🍅</span>
+                <h3>番茄鐘工作法</h3>
+                <p>專注 25 分鐘，休息 5 分鐘。短暫的休息能讓大腦整理資訊，避免認知疲勞，提升整體記憶效率。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="lifestyle">
+        <h2 class="section-title">大腦友善的生活方式</h2>
+        <div class="grid">
+            <div class="card" style="border-left: 4px solid var(--primary-color);">
+                <h3>優質睡眠</h3>
+                <p>睡眠是記憶鞏固的關鍵時期。確保每天 7-8 小時的高質量睡眠，讓大腦清除代謝廢物。</p>
+            </div>
+            <div class="card" style="border-left: 4px solid var(--secondary-color);">
+                <h3>有氧運動</h3>
+                <p>運動能增加大腦供血量，促進腦源性神經營養因子 (BDNF) 的分泌，這對神經生長至關重要。</p>
+            </div>
+            <div class="card" style="border-left: 4px solid var(--accent-color);">
+                <h3>健腦飲食</h3>
+                <p>攝取富含 Omega-3 的食物（如深海魚）、抗氧化劑（藍莓、堅果）以及足夠的水分。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="game">
+        <h2 class="section-title">即時大腦訓練</h2>
+        <div class="memory-game">
+            <h3>瞬間記憶測試</h3>
+            <p>點擊卡片翻牌，找出所有配對。測試你的短期記憶力！</p>
+            <div class="game-grid" id="game-grid">
+                <!-- JS Generated -->
+            </div>
+            <button class="cta-btn" style="margin-top: 20px;" onclick="initGame()">重置遊戲</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 NEURO.DEV | 致力於人類潛能開發</p>
+    </footer>
+
+    <script>
+        // Background Animation
+        const bgContainer = document.getElementById('bg-animation');
+        for (let i = 0; i < 20; i++) {
+            const neuron = document.createElement('div');
+            neuron.classList.add('neuron');
+            const size = Math.random() * 100 + 50;
+            neuron.style.width = `${size}px`;
+            neuron.style.height = `${size}px`;
+            neuron.style.left = `${Math.random() * 100}%`;
+            neuron.style.top = `${Math.random() * 100}%`;
+            neuron.style.animationDuration = `${Math.random() * 10 + 5}s`;
+            neuron.style.animationDelay = `${Math.random() * 5}s`;
+            bgContainer.appendChild(neuron);
+        }
+
+        // Scroll Observer for Fade-in
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Simple Memory Game
+        const gameGrid = document.getElementById('game-grid');
+        const emojis = ['🧠', '⚡', '🧬', '🔋', '🧠', '⚡', '🧬', '🔋'];
+        let hasFlippedCard = false;
+        let lockBoard = false;
+        let firstCard, secondCard;
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function createCard(emoji) {
+            const card = document.createElement('div');
+            card.classList.add('game-card');
+            card.dataset.emoji = emoji;
+            card.addEventListener('click', flipCard);
+            return card;
+        }
+
+        function flipCard() {
+            --------------------
+            if (lockBoard) return;
+            if (this === firstCard) return;
+
+            this.classList.add('flipped');
+            this.textContent = this.dataset.emoji;
+
+            if (!hasFlippedCard) {
+                hasFlippedCard = true;
+                firstCard = this;
+                return;
+            }
+
+            secondCard = this;
+            checkForMatch();
+        }
+
+        function checkForMatch() {
+            let isMatch = firstCard.dataset.emoji === secondCard.dataset.emoji;
+            isMatch ? disableCards() : unflipCards();
+        }
+
+        function disableCards() {
+            firstCard.removeEventListener('click', flipCard);
+            secondCard.removeEventListener('click', flipCard);
+            resetBoard();
+        }
+
+        function unflipCards() {
+            lockBoard = true;
+            setTimeout(() => {
+                firstCard.classList.remove('flipped');
+                secondCard.classList.remove('flipped');
+                firstCard.textContent = '';
+                secondCard.textContent = '';
+                resetBoard();
+            }, 1000);
+        }
+
+        function resetBoard() {
+            [hasFlippedCard, lockBoard] = [false, false];
+            [firstCard, secondCard] = [null, null];
+        }
+
+        function initGame() {
+            gameGrid.innerHTML = '';
+            const shuffledEmojis = shuffle([...emojis]);
+            shuffledEmojis.forEach(emoji => {
+                gameGrid.appendChild(createCard(emoji));
+            });
+            resetBoard();
+        }
+
+        initGame();
+    </script>
+</body>
+
+</html>

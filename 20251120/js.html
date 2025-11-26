@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: aquamarine;
+            margin: auto;
+            margin-top: 50px;
+        }
+        .btn-box{
+            width: 300px;
+            height: 100px;
+            background-color: rgb(9, 119, 82);
+            margin: auto;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="btn-box"></div>
+
+    <script>
+        // 先綁定bind
+        let myTv = document.querySelector('.box');
+        let myBtn = document.querySelector('.btn-box');
+
+        // 輸出
+        console.log('hello js');
+        console.log('myTv',myTv);
+        console.log('myBtn',myBtn);
+
+        // 在動作action
+        myBtn.addEventListener('click',function(){
+            console.log('myBtn ok');
+        });
+
+    </script>
+</body>
+</html>

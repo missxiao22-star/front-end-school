@@ -4,6 +4,8 @@
 .header{
     width: 1024px;
     height: 65px;
+    border: 1px solid black;
+    border-bottom: 0px;
     /* background-color: bisque; */
 }
 .container{
@@ -15,12 +17,13 @@
     .cl{
         display: flex;
         flex-direction: column;
-
+        
 
         .cl-t{
         width: 215px;
         height: calc(100% - 25px);
         background-color: rgb(243, 168, 155);
+        border: 1px solid black;
         }
 
         .cl-t-t{
@@ -31,6 +34,7 @@
             width: 55%;
             text-align: center;
             margin: auto;
+            
         }
 
         .cl-t-b{
@@ -53,12 +57,16 @@
         color: #000000;
         text-align: center;
         font-family: '標楷體';
+        border: 1px solid black;
+        border-top: 0px;
+
         }
     }
     
     .cr{
         display: flex;
         flex-direction: column;
+        
 
 
         .cr-t{
@@ -67,6 +75,8 @@
         /* background-color: rgb(243, 155, 177); */
         display: flex;
         flex-direction: column;
+        border: 1px solid black;
+        border-left: 0px;
         }
         
         marquee{
@@ -80,6 +90,9 @@
         /* background-color: rgb(155, 222, 243); */
         display: flex;
         flex-direction: column;
+        border: 1px solid black;
+        border-left: 0px;
+        border-top: 0px;
         }
 
         iframe{
@@ -95,5 +108,7 @@
     background-color: rgb(253, 253, 198);
     text-align: center;
     font-family: '標楷體';
+    border: 1px solid black;
+    border-top: 0px;
 
 }

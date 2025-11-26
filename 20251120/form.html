@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- action ->資料表"傳送地址" -->
+    <!-- method ->資料表"傳遞"至伺服器"方法"(get or post) -->
+    <form name="form" action="./api/login.php" method="post">
+        <input id="account" name="acc" type="text">
+        <label for="account">帳號</label>
+        <br>
+        <input id="pw" name="pw" type="password">
+        <label for="pw">密碼</label>
+        <br>
+        <br>
+        <input type="submit" value="送出">
+        <br>
+        <input type="reset" value="重設">
+    </form>
+</body>
+</html>
