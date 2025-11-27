@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <script>
+        //變數計算=5
+        let count =5;
+        //變數時間器=每隔幾秒重複執行函數()=>
+        let timer=setInterval()=>{
+            //執行並印出函式("剩下:"+多少時間+"秒")
+            console.log("剩下:"+count+"秒");
+            //計算本身減1秒
+            count--;
+            //如果(計算數字小於0)
+            if (count<0){
+                //此函式(作用變數時間) **停止定時器**
+                clearInterval(timer);
+                //地址在""，並幾秒後跳轉 **立刻跳轉**
+                location.href=""
+            }
+            //秒數設定 **1000ms後跳轉**
+        },1000);
+    </script>
+</body>
+</html>
