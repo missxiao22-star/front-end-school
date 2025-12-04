@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container-show {
+            width: 80%;
+            height: 30vh;
+            background-color: lightblue;
+            margin: auto;
+        }
+
+        .container-btn {
+            width: 80%;
+            height: 30vh;
+            background-color: #ccc;
+            margin: auto;
+            margin-top: 20px;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .container-btn>.item {
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            /* background-color: lightpink; */
+        }
+
+        .green-btn,
+        .bg-green {
+            background-color: lightgreen;
+        }
+
+        .red-btn,
+        .bg-red {
+            background-color: lightcoral;
+        }
+
+        .yellow-btn,
+        .bg-yellow {
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-show">
+    </div>
+    <div class="container-btn">
+        <div class="item green-btn"></div>
+        <div class="item red-btn"></div>
+        <div class="item yellow-btn"></div>
+    </div>
+
+    <script>
+        //function
+        function lightFun(getclass){
+            console.log('hello');
+            let result = getclass;
+            // console.log('result',getclass);
+            console.log('result',result);
+        }
+        //bind
+        const containerShow = document.querySelector('.container-show');
+        const greenBtn = document.querySelector('.green-btn');
+        const redBtn = document.querySelector('.red-btn');
+        const yellowBtn = document.querySelector('.yellow-btn');
+        //action
+        greenBtn.addEventListener('click',function(){
+            containerShow.setAttribute('class','container-show bg-green');
+            let getclass = containerShow.getAttribute('class');
+            lightFun(getclass);
+        });
+        redBtn.addEventListener('click',function(){
+            containerShow.setAttribute('class','container-show bg-red');
+            let getclass = containerShow.getAttribute('class');
+            lightFun(getclass);
+        });
+        yellowBtn.addEventListener('click',function(){
+            containerShow.setAttribute('class','container-show bg-yellow');
+            let getclass = containerShow.getAttribute('class');
+            lightFun(getclass);
+        });
+    </script>
+</body>
+
+</html>
