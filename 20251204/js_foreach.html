@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <table id="myTable">
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>php</td>
+            <td>30</td>
+        </tr>
+
+    </table>
+
+
+    <script>
+        //date
+        const date= [
+            {
+                'id': 1,
+                'name':'javascrip精選16堂課',
+                'number': 10
+            },
+            {
+                'id': 2,
+                'name':'sql的五十道練習',
+                'number': 11
+            },
+            {
+                'id': 2,
+                'name':'html.css3網頁設計',
+                'number': 12
+            }
+        ];
+        console.log('date',date);
+
+       //foreach
+    //    date.forEach(function(vaule,key){
+    //     console.log('key',key);
+    //     console.log('vaule',vaule);
+    //    })
+
+       //foreach簡寫
+       let tableText = ``;
+       date.forEach(function(vaule,key){
+        tableText +=`
+        <tr>
+            <td>${vaule.id}</td>
+            <td>${vaule.name}</td>
+            <td>${vaule.number}</td>
+        </tr>
+        `;
+        console.log('tableText',tableText);
+
+        //bind
+        const myTable = document.getElementById('myTable');
+        console.log('myTable',myTable);
+        
+
+        //action
+        myTable.innerHTML += tableText;
+        
+       });
+    </script>
+</body>
+</html>

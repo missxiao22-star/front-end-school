@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <table id="myTable">
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>php</td>
+            <td>30</td>
+        </tr>
+
+    </table>
+
+
+    <script>
+        //bind
+        const myTable = document.getElementById('myTable');
+
+        let tableText=`
+        <tr>
+            <td>1</td>
+            <td>php</td>
+            <td>30</td>
+        </tr>
+        `;
+       console.log('myTable',myTable);
+
+       //action
+
+       myTable.innerHTML +=tableText;
+
+    </script>
+</body>
+</html>
