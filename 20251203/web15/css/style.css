@@ -1,0 +1,120 @@
+ .header{
+    width: 1022px;
+    height: 63px;
+    /* background-color: aqua; */
+    border: 1px solid black;
+    border-bottom: 0px;
+    margin: auto;
+
+    .header-img{
+        /*找出如何置中*/
+        margin: auto;
+        width: 994px;
+        height: 60px;
+    }
+ }
+ .main{
+     width: 1022px;
+     height: calc(768px - 65px - 20px);
+     /* background-color: aquamarine; */
+     margin: auto;
+     display: flex;
+
+     .main-L{
+         width: 215px;
+         height: 100%;
+         /* background-color: blanchedalmond; */
+         .main-L-top{
+             width: 100%;
+             height: calc(100% - 25px);
+             /* background-color: violet; */
+             border: 1px solid black;
+             border-bottom: 0px;
+
+             .main-L-top-0{
+                margin: auto;
+                font-size: 24px;
+                font-family: '標楷體';
+                color: #FF00FF;
+                border-bottom: 1px solid black;
+                width: 55%;
+                text-align: center;
+             }
+             .main-L-top-1{
+                font-size: 16px;
+                font-family: '標楷體';
+                color: #000000;
+                text-align: center;
+                background-image: url(../images/menu1.png);
+                height: 20px;
+                width: 200px;
+                border-radius: 10px;
+                margin: auto;
+                margin-top: 10px;
+             }
+             .main-L-top-1:hover{
+                background-image: url(../images/menu2.png);
+             }
+         }
+         
+         .main-L-bot{
+             width: 100%;
+             height: 25px;
+             /* background-color: bisque; */
+             border: 1px solid black;
+             border-bottom: 0px;
+             text-align: center;
+             font-size: 16px;
+             font-family: '標楷體';
+         }
+     }
+     .main-R{
+         width: 809px;
+         height: 100%;
+         /* background-color: blue; */
+         display: flex;
+         flex-direction: column;
+         
+         .main-R-top{
+             width: 100%;
+             height: 29px;
+             /* background-color: rgb(247, 0, 255); */
+             border: 1px solid black;
+             border-left: 0px;
+
+             marquee{
+                width: 770px;
+                height: 29px;
+                font-size: 24px;
+                font-family: '標楷體';
+                color: #0000FF;
+             }
+         }
+         
+         .main-R-bot{
+             width: 809px;
+             height: calc(100% - 29px);
+             /* background-color: blueviolet; */
+             border: 1px solid black;
+             border-top: 0px;
+             border-bottom: 0px;
+             border-left: 0px;
+         }
+        iframe{
+            width: 99%;
+            height: 99%;
+            margin-left: 3px;
+        }
+     }
+ }
+ .footer{
+    width: 1022px;
+    height: 25px;
+    /* background-color: tomato; */
+    margin: auto;
+    border: 1px solid black;
+    font-size: 16px;
+    font-family: '標楷體';
+    color: #000000;
+    text-align: center;
+ }

@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+}
+.body{}
+.main{
+    width: 1022px;
+    height: 63px;
+    /* background-color: aquamarine; */
+    border: 1px solid black;
+    border-bottom: 0px;
+    margin: auto;
+    .main-img{
+        margin: auto;
+        /*查看為何無法置中*/ 
+    }
+}
+.contect{
+    width: 1022px;
+    height: calc(768px - 65px - 20px);
+    /* background-color:aqua; */
+    margin: auto;
+    display: flex;
+    
+
+    .c_left{
+        width: 213px;
+        height: 100%;
+        /* background-color: violet; */
+        .c_left_top{
+            width: 213px;
+            height: calc(100% - 25px);
+            /* background-color: rgb(243, 32, 243); */
+            border: 1px solid black;
+
+            .c_left_top-t{
+                text-align: center;
+                font-size: 24px;
+                color: #FF00FF;
+                font-family: '標楷體';
+                border-bottom: 1px solid black;
+                width: 50%;
+                margin: auto;
+            }
+            .c_left_top-b{
+                font-size: 16px;
+                font-family: '標楷體';
+                color: #000000;
+                background-image: url(../images/menu1.png);
+                text-align: center;
+                width: 200px;
+                height: 30px;
+                border-radius: 10px;
+                margin: auto;
+                margin-top: 10px;
+                
+            }
+            .c_left_top-b:hover{
+                background-image: url(../images/menu2.png);
+            }
+        }
+        .c_left_bot{
+            width: 213px;
+            height: 25px;
+            /* background-color: rgb(235, 143, 235); */
+            border: 1px solid black;
+            border-top: 0px;
+            border-bottom: 0px;
+            text-align: center;
+            font-size: 16px;
+            font-family: '標楷體';
+            color: #000000;
+        }
+    }
+    .c_right{
+        width: 809px;
+        height: 100%;
+        /* background-color: rgb(131, 4, 131); */
+        display: flex;
+        flex-direction: column;
+
+        marquee{
+            width: 770px;
+            height: 29px;
+            font-size: 24px;
+            font-family: '標楷體';
+            color: #0000FF;
+        }
+
+        .c_right_top{
+            width: 100%;
+            height: 29px;
+            /* background-color: #eea3a3; */
+            border: 1px solid black;
+            border-left: 0px;
+        }
+        .c_right_bot{
+            width: 100%;
+            height: calc(100% - 29px);
+            /* background-color: #db4949; */
+            border: 1px solid black;
+            border-top: 0px;
+            border-bottom: 0px;
+            border-left: 0px;
+
+            iframe{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+}
+.footer{
+    width: 1022px;
+    height: 18px;
+    /* background-color: #eea3a3; */
+    margin: auto;
+    border: 1px solid black;
+}
+

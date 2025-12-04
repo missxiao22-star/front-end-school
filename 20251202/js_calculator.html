@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calculator-display {
+            background-color: #222;
+            color: white;
+            padding: 15px;
+            text-align: right;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .calculator-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+        .calculator-buttons button {
+            padding: 20px;
+            font-size: 1.3em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #eee;
+        }
+        .calculator-buttons .operator {
+            background-color: #f0ad4e;
+            color: white;
+        }
+        .calculator-buttons .clear, .calculator-buttons .equal {
+            background-color: #5bc0de;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+            <div class="calculator-section">
+                <h2>簡易計算機</h2>
+                <div class="calculator-display" id="calc-display" tabindex="0">0</div>
+                <div class="calculator-buttons">
+                    <button onclick="appendToDisplay('7')">7</button>
+                    <button onclick="appendToDisplay('8')">8</button>
+                    <button onclick="appendToDisplay('9')">9</button>
+                    <button class="operator" onclick="appendToDisplay('/')">÷</button>
+
+                    <button onclick="appendToDisplay('4')">4</button>
+                    <button onclick="appendToDisplay('5')">5</button>
+                    <button onclick="appendToDisplay('6')">6</button>
+                    <button class="operator" onclick="appendToDisplay('*')">×</button>
+
+                    <button onclick="appendToDisplay('1')">1</button>
+                    <button onclick="appendToDisplay('2')">2</button>
+                    <button onclick="appendToDisplay('3')">3</button>
+                    <button class="operator" onclick="appendToDisplay('-')">-</button>
+
+                    <button class="clear" onclick="clearDisplay()">C</button>
+                    <button onclick="appendToDisplay('0')">0</button>
+                    <button class="equal" onclick="calculateResult()">=</button>
+                    <button class="operator" onclick="appendToDisplay('+')">+</button>
+                </div>
+            </div>
+<script>
+let calculatorDisplay; 
+let currentInput = '0';
+let calculatorActive = false;
+
+// 定義鍵盤按鍵與計算機輸入的對應
+const keyMap = {
+    '7': '7', '8': '8', '9': '9', '/': '/',
+    '4': '4', '5': '5', '6': '6', '*': '*',
+    '1': '1', '2': '2', '3': '3', '-': '-',
+    '0': '0', '.': '.', '+': '+',
+    'Enter': '=', '=': '=', 'c': 'C', 'C': 'C', 'Delete': 'C' // Enter 和 = 執行計算，C/c/Delete 執行清除
+};
+
+// =========================================================
+// II. 計算機核心邏輯
+// =========================================================
+
+/** 將按鈕值追加到輸入字串中並更新顯示 */
+function appendToDisplay(value) {
+    const displayValue = value.replace('/', '÷').replace('*', '×');
+
+    switch (true) {
+        // 當目前是 '0' 並且輸入的是 1-9 -> 直接替換
+        case currentInput === '0' && '123456789'.includes(value):
+            currentInput = value;
+            break;
+
+        // 當目前是 '0' 並且輸入的是小數點 '.' -> 變成 '0.'
+        case currentInput === '0' && value === '.':
+            currentInput += value;
+            break;
+
+        // 其他可追加的情況（包含運算子或小數點）
+        case currentInput !== '0' || '+-*/'.includes(value) || value === '.':
+            {
+                const lastChar = currentInput.slice(-1);
+                // 處理連續運算符號 (用後面的替換前面的)
+                if ('+-*/'.includes(value) && '+-*/'.includes(lastChar)) {
+                    currentInput = currentInput.slice(0, -1) + value;
+                } else {
+                    currentInput += value;
+                }
+            }
+            break;
+
+        // 預設不做事（保留 currentInput）
+        default:
+            break;
+    }
+
+    // 更新顯示 (將內部 / 和 * 轉換為 ÷ 和 ×)
+    calculatorDisplay.textContent = currentInput.replace(/\//g, '÷').replace(/\*/g, '×');
+}
+
+/** 清空計算機顯示（用 switch 代替簡單判斷） */
+function clearDisplay() {
+    // 這裡沒必要用條件，但為示範把單一行維持
+    switch (true) {
+        default:
+            currentInput = '0';
+            calculatorDisplay.textContent = currentInput;
+            break;
+    }
+}
+
+/** 計算結果（eval 仍然使用，但錯誤處理用 switch） */
+function calculateResult() {
+    try {
+        // 將顯示的符號轉換回 JavaScript 可運算的符號
+        let calculation = currentInput.replace(/÷/g, '/').replace(/×/g, '*');
+        // 核心計算 (使用 eval)
+        let result = eval(calculation);
+
+        switch (true) {
+            case !isFinite(result):
+                currentInput = '錯誤';
+                break;
+            default:
+                currentInput = result.toString();
+                break;
+        }
+
+        calculatorDisplay.textContent = currentInput.replace(/\//g, '÷').replace(/\*/g, '×');
+    } catch (error) {
+        switch (true) {
+            default:
+                currentInput = '錯誤';
+                calculatorDisplay.textContent = currentInput;
+                break;
+        }
+    }
+}
+
+function initCalculator() {
+    // 獲取計算機顯示 DOM 元素
+    calculatorDisplay = document.getElementById('calc-display');
+
+    // 把原本 if (!calculatorDisplay) 改成 switch 判斷
+    switch (!calculatorDisplay) {
+        case true:
+            console.error("找不到 ID 為 'calc-display' 的計算機顯示元素。");
+            return;
+        default:
+            break;
+    }
+
+    // 1. 計算機點擊焦點處理
+    calculatorDisplay.addEventListener('click', () => {
+        calculatorActive = true;
+        calculatorDisplay.focus();
+        calculatorDisplay.style.backgroundColor = '#444'; // 突出顯示焦點狀態
+    });
+
+    calculatorDisplay.addEventListener('blur', () => {
+        calculatorActive = false;
+        calculatorDisplay.style.backgroundColor = '#222'; // 恢復正常顏色
+    });
+
+    // 2. 鍵盤事件處理
+    document.addEventListener('keydown', (event) => {
+        const key = event.key;
+
+        // 把原本 if (!calculatorActive) return; 改為 switch 判斷
+        switch (true) {
+            case !calculatorActive:
+                return;
+            default:
+                break;
+        }
+
+        const mappedValue = keyMap[key];
+
+        // 如果有 mappedValue（有對應鍵）
+        switch (mappedValue) {
+            case undefined:
+                // 沒有 mappedValue，接著檢查是否為 Backspace
+                switch (key) {
+                    case 'Backspace':
+                        event.preventDefault();
+                        currentInput = currentInput.slice(0, -1) || '0';
+                        calculatorDisplay.textContent = currentInput.replace(/\//g, '÷').replace(/\*/g, '×');
+                        break;
+                    default:
+                        // 非支援按鍵，忽略
+                        break;
+                }
+                break;
+
+            case '=':
+                event.preventDefault();
+                calculateResult();
+                break;
+
+            case 'C':
+                event.preventDefault();
+                clearDisplay();
+                break;
+
+            default:
+                // 其他按鍵 (數字/運算符/小數點)
+                event.preventDefault();
+                appendToDisplay(mappedValue);
+                break;
+        }
+    });
+}
+
+// 確保在文件載入完成後執行計算機初始化
+window.onload = initCalculator;
+</script>
+</body>
+</html>

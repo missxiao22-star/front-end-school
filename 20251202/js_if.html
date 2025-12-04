@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 500px;
+            height: 500px;
+            /* background-color: bisque; */
+            margin: auto;
+            margin-top: 50px;
+            padding: 60px;
+        }
+        .name{
+            width: 100px;
+            height: 100px;
+            /* background-color: rgb(247, 144, 19); */
+            margin: auto;
+            margin-top: 10px;
+            
+        }
+        .phone{
+            width: 100px;
+            height: 100px;
+            /* background-color: rgb(247, 144, 19); */
+            margin: auto;
+            margin-top: 10px;
+            
+        }
+        .submit{
+            width: 100px;
+            height: 100px;
+            /* background-color: rgb(247, 144, 19); */
+            margin: auto;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="name">
+            <label for="name">姓名</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div class="phone">
+            <label for="name">電話</label>
+            <input type="text" name="phone" id="phone">
+        </div>
+        <div class="submit">
+            <input type="submit" value="送出" id="myBtn" class="submit-btn">
+        </div>
+        <div class="div">
+            <span id="resultSpan">確認定位?</span>
+        </div>
+    </div>
+
+    <script>
+        //bind
+        const inputName = document.getElementById('name');
+        const inputPhone = document.getElementById('phone');
+        const myBtn = document.getElementById('myBtn');
+        const resultSpan = document.getElementById('resultSpan');
+        
+        console.log('inputName',inputName);
+        console.log('phone',inputPhone);
+        console.log('myBtn',myBtn);
+        console.log('resultSpan',resultSpan);
+        //action
+        myBtn.addEventListener('click',function(){
+            
+        })
+    </script>
+</body>
+</html>
