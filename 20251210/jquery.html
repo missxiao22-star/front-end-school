@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            margin: auto;
+        }
+
+        .myBtn {
+            width: 300px;
+            height: 100px;
+            background-color: lightpink;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+     <div class="box">
+
+    </div>
+    <div class="myBtn">
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        //一開始
+        $(document).ready(function ($myTable) {
+        
+        console.log('myTable');
+
+        });
+        //第二次
+        $(document).ready(function ($myTable) {
+        //bind-原生java寫法
+        // const box = document.querySelector('.box');
+        // const box = document.querySelector('.myBtn');
+
+        //bind-jq簡寫
+        const box = $('.box',box);
+        const myBtn = $('.myBtn',myBtn);
+
+        //action-原生java寫法
+        // myBtn .addEventListener('click',function(){
+        //     box.style.backgroundColor = 'lightgreen';
+        //     console.log(('myBtn click ok'));
+        // });
+
+        //action-jq簡寫
+        myBtn .click(function(){
+            console.log((' jquery myBtn click ok'));
+        });
+
+        });
+
+        $(function () {
+
+            // jQuery methods go here...
+
+        });
+    </script>
+</body>
+
+</html>

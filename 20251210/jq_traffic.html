@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box-tv {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            margin: auto;
+
+            color: whitesmoke;
+            font-size: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-container {
+            width: 300px;
+            height: 100px;
+            background-color: lightpink;
+            margin: auto;
+            margin-top: 10px;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .box-btn {
+            width: 30%;
+            height: 80%;
+            border-radius: 10px;
+        }
+
+        .bg-red {
+            background-color: palevioletred;
+        }
+
+        .bg-green {
+            background-color: lightgreen;
+        }
+
+        .bg-yellow {
+            background-color: lightgoldenrodyellow;
+        }
+
+        .red-btn {
+            background-color: palevioletred;
+        }
+
+        .green-btn {
+            background-color: lightgreen;
+        }
+
+        .yellow-btn {
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-tv">
+    </div>
+
+    <div class="btn-container">
+        <div class="box-btn red-btn">
+
+        </div>
+        <div class="box-btn green-btn">
+
+        </div>
+        <div class="box-btn yellow-btn">
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+
+
+    <script>
+        // 1.bind
+
+        // let const ..
+        // let myTv = document.querySelector('.box-tv');
+        // let redBtn = document.querySelector('.red-btn');
+        // let greenBtn = document.querySelector('.green-btn');
+        // let yellowBtn = document.querySelector('.yellow-btn');
+
+        // console.log('myTv', myTv);
+        // console.log('redBtn', redBtn);
+        // console.log('greenBtn', greenBtn);
+        // console.log('yellowBtn', yellowBtn);
+
+        //jq簡寫
+
+        $(document).ready(function () {
+            const tv = $('.bot-tv');
+            const redbtn = $('.red-btn');
+            const greenbtn = $('.green-btn');
+            const yellowbtn = $('.yellow-btn');
+            console.log('box', box);
+            console.log('greenbtn', greenbtn);
+            console.log('redbtn', redbtn);
+            console.log('yellowbtn', yellowbtn);
+            
+        
+        // 2.action
+
+        // redBtn.addEventListener('click', function () {
+        //     myTv.setAttribute('class', 'box-tv bg-red');
+        // });
+        // greenBtn.addEventListener('click', function () {
+        //     myTv.setAttribute('class', 'box-tv bg-green');
+        // });
+        // yellowBtn.addEventListener('click', function () {
+        //     myTv.setAttribute('class', 'box-tv bg-yellow');
+        // });
+        // myTv.addEventListener('click', function () {
+        //     // this 我自己
+        //     console.log('this', this);
+        //     this.setAttribute('class', 'box-tv');
+        // });
+
+        //jq簡寫
+
+        greenbtn.click(function(){
+            console.log('greenbtn ok');
+            box.attr('class','box bg-green');
+        });
+
+        redbtn.click(function(){
+            console.log('redbtn ok');
+            box.attr('class','box bg-ren');
+        });
+
+        yellowbtn.click(function(){
+            console.log('yellowbtn ok');
+            box.attr('class','box bg-yellow');
+        });
+        
+});
+
+
+
+
+
+    </script>
+</body>
+
+</html>
