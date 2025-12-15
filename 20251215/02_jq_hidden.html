@@ -51,22 +51,22 @@
         //先console.log出來確認是否綁定成功
         //將div2綁定方法，此方法可以重複點擊
         //將div2綁定第二個方法，此方法可以改變class狀態
-        $(document).ready(function(){
-            //bind
-            const div1 = $('.div1');
-            const div2 = $('.div2');
-            const bg_red = $('.bg_red');
-            const bg_green = $('.bg_green');
-            const bg_yellow = $('.bg_yellow');
+        // $(document).ready(function(){
+        //     //bind
+        //     const div1 = $('.div1');
+        //     const div2 = $('.div2');
+        //     const bg_red = $('.bg_red');
+        //     const bg_green = $('.bg_green');
+        //     const bg_yellow = $('.bg_yellow');
             //action
-            div1.click(function(){
-                console.log('click ok');
-                div2.toggle();
-                div2.attr('class','div1 bg_red');
-                div2.attr('class','div1 bg_green');
-                div2.attr('class','div1 bg_yellow');
-            });
-        });
+        //     div1.click(function(){
+        //         console.log('click ok');
+        //         div2.toggle();
+        //         div2.attr('class','div1 bg_red');
+        //         div2.attr('class','div1 bg_green');
+        //         div2.attr('class','div1 bg_yellow');
+        //     });
+        // });
     </script>
     <script>
         //我要用判斷式來決定顯示的顏色是甚麼
@@ -77,7 +77,7 @@
         //     let isChange = FALSE;
 
         //     div1.click(function(){
-                console.log('click ok');
+                // console.log('click ok');
                 //如果是原本的顏色，我要換顏色
         //         if(isOriginal){
         //             div2.attr('class','div1 bg-red');
@@ -110,7 +110,7 @@
                     div2.sttr('class','div2 bg_yellow');
                 }
 
-            })
+            });
         });
     </script>
 </body>
