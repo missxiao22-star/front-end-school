@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            width: 300px;
+            height: 100px;
+            background-color: tomato;
+            margin-top: 10px;
+        }
+        .div2{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(119, 22, 4);
+            margin-top: 10px;
+        }
+        .bg-red{
+            background-color: aquamarine;
+        }
+        .bg-green{
+            background-color: rgb(193, 127, 255);
+        }
+        .bg-yellow{
+            background-color: rgb(178, 255, 127);
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
+    <!-- <script>
+        
+        $(document).ready(function(){
+            const div1 = $('.div1');
+            const div2 = $('.div2');
+            let isOriginal = true;
+            let isChange = false;
+            //想要改變2種以上的狀態不要用布林來判斷，可以用數字來判斷
+            div1.click(function(){
+                if(isOriginal){
+                    div2.attr('class','div2 bg-red');
+                    isOriginal = false;
+                }else(isOriginal){
+                    div2.attr('class','div2 bg-green');
+                    isOriginal = true;
+                }
+            });
+        });
+    </script> -->
+    
+    <script>
+        
+        $(document).ready(function(){
+            const div1 = $('.div1');
+            const div2 = $('.div2');
+            let isOriginal = 0;
+            //想要改變2種以上的狀態不要用布林來判斷，可以用數字來判斷
+            div1.click(function(){
+                //如果是原本的狀態(0)，就改變
+                if(isOriginal == 0){
+                    div2.attr('class','div2 bg-red');
+                    //宣告變成1，以利下次回圈使用
+                    isOriginal = 1;
+                    //如果是1的狀態，就改變
+                }else if(isOriginal == 1){
+                    div2.attr('class','div2 bg-green');
+                    //宣告變成狀態2
+                    isOriginal = 2;
+                }else{
+                    div2.attr('class','div2 bg-yellow');
+                    isOriginal = 0;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
