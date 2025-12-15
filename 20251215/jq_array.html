@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  
+    </style>
+</head>
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            //先宣告一個陣列叫做Array
+            let Array = [1,2,3,4];
+            //log出來查看
+            console.log('Array',Array);
+            
+            //用forEach來一個個抓陣列裡面的資料，從第0筆到結束
+            //Array.forEach(function(值,索引){
+            //vaule是我目前這筆資料
+            //key在陣列裡面叫做index(這筆資料的位置)
+            Array.forEach(function(vaule,key){
+                console.log('key',key);
+                console.log('vaule',vaule);
+            });
+        });
+    </script>
+</body>
+</html>

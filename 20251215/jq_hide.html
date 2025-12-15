@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            width: 300px;
+            height: 100px;
+            background-color: tomato;
+            margin-top: 10px;
+        }
+        .div2{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(119, 22, 4);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <script>
+        $(document).ready(function(){
+            //bind
+            const div1 = $('.div1');
+            const div2 = $('.div2');
+            const bg_red = $('.bg_red');
+            const bg_green = $('.bg_green');
+            const bg_yellow = $('.bg_yellow');
+            //action
+            div1.click(function(){
+                console.log('click ok');
+                div2.hide();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            width: 300px;
+            height: 100px;
+            background-color: tomato;
+            margin-top: 10px;
+        }
+        .div2{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(119, 22, 4);
+            margin-top: 10px;
+        }
+        .bg_red{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(255, 0, 0);
+        }
+        .bg_green{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(2, 255, 99);
+        }
+        .bg_yellow{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(251, 255, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
+    <script>
+        //我要點擊的時候可以隨機變色
+        //先給一個方法準備
+        //綁定div跟class
+        //行動
+        //先console.log出來確認是否綁定成功
+        //將div2綁定方法，此方法可以重複點擊
+        //將div2綁定第二個方法，此方法可以改變class狀態
+        $(document).ready(function(){
+            //bind
+            const div1 = $('.div1');
+            const div2 = $('.div2');
+            const bg_red = $('.bg_red');
+            const bg_green = $('.bg_green');
+            const bg_yellow = $('.bg_yellow');
+            //action
+            div1.click(function(){
+                console.log('click ok');
+                div2.toggle();
+                div2.attr('class','div1 bg_red');
+                div2.attr('class','div1 bg_green');
+                div2.attr('class','div1 bg_yellow');
+            });
+        });
+    </script>
+    <script>
+        //我要用判斷式來決定顯示的顏色是甚麼
+        // $(document).ready(function(){
+        //     const div1 = $('.div1');
+        //     const div2 = $('.div2');
+        //     let isOriginal = TRUE;
+        //     let isChange = FALSE;
+
+        //     div1.click(function(){
+                console.log('click ok');
+                //如果是原本的顏色，我要換顏色
+        //         if(isOriginal){
+        //             div2.attr('class','div1 bg-red');
+        //         }else(isChange){
+        //             div2.sttr('class','div1 bg-green');
+        //         }else(isOriginal){
+        //             div2.sttr('class','div1 bg-yellow');
+        //         }
+        //     });
+        // });
+    </script>
+    <script>
+        //我想要點第一次換紅色，第二次換綠色，第三次換黃色，一直循環
+        $(document).ready(function(){
+            //先綁定
+            const div1 = $('.div1');
+            const div2 = $('.div2');
+            //宣告 兩個布林 名稱為 isOriginal/isChange
+            let isOriginal = true;
+            let isChange = false;
+            //方法點擊
+            div1.click(function(){
+                if(isOriginal){
+                    div2.sttr('class','div2 bg_red');
+                    isOriginal = false;
+                }if(isOriginal){
+                    div2.sttr('class','div2 bg_green');
+                    isOriginal = true;
+                }else{
+                    div2.sttr('class','div2 bg_yellow');
+                }
+
+            })
+        });
+    </script>
+</body>
+</html>

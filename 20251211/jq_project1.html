@@ -11,21 +11,104 @@
 <body>
     <div class="container_s1_input">
         <p>
-            <label for="money_s1">單筆金額</label>
-            <input type="number" name="" id="money_s1">
+            <label for="moneyS1">單筆金額</label>
+            <input type="number" name="" id="moneyS1" vaule="0">
         </p>
         <p>
-            <label for="year_s1">投資時間</label>
-            <input type="number" name="" id="year_s1">
+            <label for="yearS1">投資時間</label>
+            <input type="number" name="" id="yearS1" vaule="0">
         </p>
         <p>
-            <label for="money_s1">投資利率</label>
-            <input type="rate" name="" id="rate_s1">
+            <label for="moneyS1">投資利率</label>
+            <input type="rate" name="" id="rateS1" vaule="0">
         </p>
         <p>
-            <input type="submit" value="計算金額">
+            <input type="submit" value="計算金額" id="countbtnS1">
         </p>
     </div>
-    <div class="container_s1_output"></div>
+    <div class="container_s1_output">
+        <div class="result_s1">
+            1. 100元<br>
+            2. 110元<br>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function(){
+          //bind
+
+            //先綁訂所有的方法，將input的id內的值，賦值給元素
+            const moneyS1 = $('#moneyS1');
+            const yearS1 = $('#yearS1');
+            const rateS1 = $('#rateS1');
+            const countbtnS1 = $('#countbtnS1');
+            //用consloe.log測試是否綁定成功
+            console.log('moneyS1',moneyS1);
+            console.log('yearS1',yearS1);
+            console.log('rateS1',rateS1);
+            console.log('countbtnS1',countbtnS1)
+
+
+          //action
+            //給予元素vaule
+            moneyS1.val(1000000);
+            yearS1.val(7);
+            rateS1.val(10);
+            
+            //元素本身有一個方法click
+            //元素(按鍵)
+            countbtnS1.click(function(){
+                //用consloe.log測試是否綁定成功
+                console.log('countbtnS1 clicked');
+                //將三個元素取得的vaulue數值用Number強制轉換成字串
+                let getMoneyS1 = Number(moneyS1.val());
+                let getYearS1 = Number(yearS1.val());
+                let getRateS1 = Number(rateS1.val());
+                //用console.log測試是否綁定成功
+                console.log('我要找的getMoneyS1在這邊->>>>>>>>>>>', getMoneyS1 );
+                console.log('用來判斷型別的方法->', typeof getMoneyS1);
+                
+                console.log('getYearS1', getYearS1 );
+                console.log('getRateS1', getRateS1 );
+
+                //宣告一個整數變數，數值為0
+                let sunS1 = 0;
+                //宣告一個字串
+                let tmpText = ``;
+                //用迴圈跑計算按鈕公式
+                //從第1年開始跑，跑getYearS1這欄的年份，再下迴圈+1年
+                for(let i =1; i <= getYearS1; i++){
+                    //在字串上面顯示，現在第幾年
+                    tmpText += `第${i}年`;
+                    //如果年份等於1(第1年)
+                    if(i == 1){
+                        //總數 = getYearS1的年份
+                        sumS1 = getMoneyS1;
+                        //字串等於 =總數取整數的數字，多少元
+                        tmpText += `${sumS1.tofiexd(0)}元 <br>`;
+                        //其他年份
+                    }else{
+                        //總數 = 總數乘以1+getYearS1的年份
+                        sumS1 = sumS1*(1 + getMoneyS1);
+                        //字串等於 =總數取整數的數字，多少元
+                        tmpText += `${sumS1.tofiexd(0)}元 <br>`;
+                    }
+                    
+                }
+                console.log('tmpText',tmpText);
+
+                resultS1.html(tmpText);
+
+                let lastLine = `<span class='text-red'>總計${getYearS1}年:${sumS1.toFixed(0)}元<br><br></Span>`;
+                resultS1.prepend(lastLine);    
+            });
+        });
+
+        
+    </script>    
 </body>
 </html>

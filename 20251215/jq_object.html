@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            //先宣告一個名為myObj的關聯陣列
+            let myObj ={
+                'id' : 1,
+                'name' : 'july',
+                'mobile' : '0988'
+            }
+            console.log('myObj',myObj);
+            console.log('myObj typeof', typeof(myObj));
+            console.log('Array.isArray(myObj)',Array.isArray(myObj));
+            
+            //盡量不要用for in 來撈東西
+            for (let key in myObj){
+                console.log('key',key);
+                //為甚麼會這樣寫?
+                console.log('vaule',myObj[key]);     
+            }
+        });
+    </script>
+</body>
+</html>
