@@ -35,7 +35,9 @@
             </script>
 
         <script>
+            //先建立一個準備方法
             $(document).ready(function () {
+                //宣告data資料(陣列內包物件)
                 let date = [
                     {
                         "id": 1,
@@ -53,14 +55,17 @@
                         "mobile": '0933',
                     }
                 ]
+                //用console.log呼叫看資料使否綁定成功
                 console.log('date', date);
-
+                //綁定資料表    
                 const myTable = $('#myTable');
+                //用console.log呼叫看資料使否綁定成功
                 console.log('myTable', myTable);
-
+                //綁定一個空字串    
                 let temText = ``;
-
+                //使用each遍歷所有資料(可以遍歷陣列跟物件)
                 $.each(data, function (key, value) {
+                    //這裡陣列要帶入自己的資料格式
                     temText += `
                     <tr>
                         <td>${value.id}</td>
@@ -69,6 +74,7 @@
                     </tr>
                     `;
                 });
+                //在資料結尾塞入tmptext遍歷的所有資料
                 myTable.append(tmpText);
             })
         </script>
